@@ -20,3 +20,17 @@ $ npm start
 Con http://miip:3000/users/Task obtenemos:
 
 ![Alt text](sequelize_association.png)
+
+Para obtener un listado de clientes con todas sus tareas tendriamos que poner:
+
+``ruby
+router.get("/Task",(req,res)=>{
+Cliente.findAll({
+  include: [{
+      model: Task
+     
+  }]
+}).then((result)=> res.json(result))
+});
+
+```
