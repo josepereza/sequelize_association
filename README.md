@@ -17,3 +17,6 @@ $ sequelize db:seed:all
 $ npm start
 ```
 
+Con http://miip:3000/users/Task obtenemos:
+
+![Alt text](sequelize_association.png)
