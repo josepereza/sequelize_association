@@ -23,7 +23,7 @@ Con http://miip:3000/users/Task obtenemos:
 
 Para obtener un listado de clientes con todas sus tareas tendriamos que poner:
 
-``ruby
+```ruby
 router.get("/Task",(req,res)=>{
 Cliente.findAll({
   include: [{
