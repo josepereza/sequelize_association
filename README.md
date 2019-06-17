@@ -34,3 +34,4 @@ Cliente.findAll({
 });
 
 ```
+![Alt text](sequelize_association2.png)
