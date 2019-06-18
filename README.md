@@ -58,4 +58,17 @@ Para utilizar clausulas "where" con  operators de sequelize
    }).then((result)=> res.json(result))
    });  
    ```
-       
+ O tambien:
+ ```ruby
+ router.get("/Task",(req,res)=>{
+  let busqueda="%"+"algu"+"%";
+ Cliente.findAll({
+    include: [{
+       model: Task,
+      
+  }],
+  where:{poblacion:{[Op.like]:[busqueda]}}
+ 
+}).then((result)=> res.json(result))
+});
+```
