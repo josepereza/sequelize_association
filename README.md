@@ -35,3 +35,27 @@ Cliente.findAll({
 
 ```
 ![Alt text](sequelize_association2.png)
+
+
+# operators
+Para utilizar clausulas "where" con  operators de sequelize
+
+- Eliminar la entrada "operatorsAliases": false  en  en archivo /config/config.json.
+- Agregar las entradas en el archivo /routes/users.js lo siguiente:
+    ```ruby
+    const db=require('../models');
+    const Op = db.Sequelize.Op;
+       --------------
+       
+     router.get("/Task",(req,res)=>{
+     Cliente.findAll({
+         include: [{
+          model: Task,
+      
+     }],
+     where:{poblacion:{[Op.eq]:["alguazas"]}}
+ 
+   }).then((result)=> res.json(result))
+   });  
+   ```
+       
